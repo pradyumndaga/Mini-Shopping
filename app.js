@@ -8,7 +8,7 @@ const indexRouter = require('./routes/index')
 const productsRouter = require('./routes/products/products')
 
 const moongose = require('mongoose');
-moongose.connect('mongodb+srv://pdaga:<password>@cluster0.pnwc8.mongodb.net/test');
+moongose.connect('mongodb+srv://pdaga:qwerty123@cluster0.pnwc8.mongodb.net/test');
 const db = moongose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connection Success to Moongose!'))
