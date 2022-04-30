@@ -15,7 +15,7 @@ db.once('open', () => console.log('Connection Success to Moongose!'))
 
 // app.use(bodyParser.urlencoded({
 //     extended: false,
-// }));
+// }));;
 const cors = require('cors');
 app.use(cors());
 app.use('/', indexRouter);
