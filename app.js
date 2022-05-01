@@ -4,6 +4,7 @@
 
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index')
 const productsRouter = require('./routes/products/products')
 
@@ -13,9 +14,9 @@ const db = moongose.connection
 db.on('error', error => console.error(error))
 db.once('open', () => console.log('Connection Success to Moongose!'))
 
-// app.use(bodyParser.urlencoded({
-//     extended: false,
-// }));;
+app.use(bodyParser.urlencoded({
+    extended: false,
+}));
 const cors = require('cors');
 app.use(cors());
 app.use('/', indexRouter);
