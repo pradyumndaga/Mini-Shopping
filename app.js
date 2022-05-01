@@ -25,4 +25,4 @@ app.use('/', indexRouter);
 app.use('/product', productsRouter);
 app.use('/orders', ordersRouter);
 app.use('/signup', signUpRouter);
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
