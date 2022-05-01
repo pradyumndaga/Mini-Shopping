@@ -13,7 +13,16 @@ productRouter.get('/', async (req, res, next) => {
     }
 });
 
-productRouter.post('/',  async (req, res, next) => {
+productRouter.get('/:id', async (req, res, next) => {
+    try {
+        const products = await Products.findById(req.params.id)
+        res.send(JSON.stringify(products));
+    } catch {
+        res.send(JSON.stringify({ error: 'Error in fetching products!' }));
+    }
+});
+
+productRouter.post('/', async (req, res, next) => {
     req.body.name = 'PRD'
     const prd = new Products({
         name: req.body.name,

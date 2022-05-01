@@ -7,6 +7,7 @@ const app = express();
 const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index')
 const productsRouter = require('./routes/products/products')
+const ordersRouter = require('./routes/orders/orders')
 
 const moongose = require('mongoose');
 moongose.connect('mongodb+srv://pdaga:qwerty123@cluster0.pnwc8.mongodb.net/test');
@@ -21,4 +22,5 @@ const cors = require('cors');
 app.use(cors());
 app.use('/', indexRouter);
 app.use('/product', productsRouter);
+app.use('/orders', ordersRouter);
 app.listen(3000);
